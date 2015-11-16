@@ -15,7 +15,7 @@ import com.ysoft.vms.domain.User;
 import com.ysoft.vms.services.IUserService;
 
 @RestController
-@RequestMapping("/rest/api/user")
+@RequestMapping("/api/rest/user")
 public class UserController {
 
 	@Autowired

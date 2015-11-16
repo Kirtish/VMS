@@ -15,7 +15,7 @@ import com.ysoft.vms.domain.Role;
 import com.ysoft.vms.services.IRoleService;
 
 @RestController
-@RequestMapping(value = "/rest/api/role")
+@RequestMapping(value = "/api/rest/role")
 public class RoleController {
 	
     

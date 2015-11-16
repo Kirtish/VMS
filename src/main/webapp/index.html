@@ -1,20 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vendor Management System</title>
-  <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap-theme.css">
-  
-  <link rel="stylesheet" href="styles/main.css"/>
-  <script src="plugins/angular/angular.min.js"></script>
-  <script src="plugins/jquery/dist/jquery.js"></script>
-  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-  
-  <script src="./js/app.js"></script> 
+<meta charset="UTF-8">
+<title>Vendor Management System</title>
+<link rel="stylesheet"
+	href="plugins/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="plugins/bootstrap/dist/css/bootstrap-theme.css">
+
+<link rel="stylesheet" href="styles/main.css" />
+
+
 </head>
-<body ng-app="myApp">
-  <div  ng-include="'components/header.html'"></div>
-  <div  ng-include="'components/footer.html'"></div>
- </body>
+<body data-ng-app="myApp">
+	<div ng-include="'components/header.html'"></div>
+	<div ng-view></div>
+	<div ng-include="'components/footer.html'"></div>
+</body>
+<script src="plugins/angular/angular.min.js"></script>
+<script src="plugins/angular-route/angular-route.min.js"></script>
+<script src="plugins/angular-resource/angular-resource.min.js"></script>
+<script src="plugins/jquery/dist/jquery.js"></script>
+<script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./js/app.js"></script>
+<script src="./services/services.js"></script>
+<script src="./controller/AdminController.js"></script>
+
 </html>
