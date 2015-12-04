@@ -25,7 +25,7 @@ public class CompanyController {
 		this.companyService = companyService;
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.GET, value = "/{id}",  produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Company getCompany(@PathVariable Long id) {
 		return companyService.getCompany(id);
 	}
@@ -40,7 +40,7 @@ public class CompanyController {
 		return companyService.save(company);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/delete/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.GET, value = "/delete/{id}",  produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Company deleteCompany(@PathVariable Long id) {
 		return companyService.delete(id);
 	}

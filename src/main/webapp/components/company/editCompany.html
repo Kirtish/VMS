@@ -1,0 +1,36 @@
+
+<div class="border-box">
+<br>
+ <h2>Edit Role</h2>
+ <div ng-controller="CompanyController">
+<form class="form-horizontal" name="newRoleForm" novalidate>
+ <div class="form-group" >
+    <label for="id" class="col-sm-2 control-label">Id</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="code" ng-model="company.id" ng-disabled="true">
+	 </div>
+  </div>
+  <div class="form-group">
+    <label for="code" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="code" ng-model="company.name" ng-disabled="true">
+	 </div>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error' : newRoleForm.descr.$invalid && !newRoleForm.descr.$pristine }">
+    <label for="descr" class="col-sm-2 control-label">Description</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="descr" ng-model="company.descr" required>
+	 </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+	<input type="submit" ng-click="updateCompany(company)" value="Save" class="btn btn-primary" ng-disabled="newRoleForm.$invalid"/>
+	<input type="button" ng-click="reset(newRoleForm)" value="Reset" class="btn btn-default"/>    
+	 <a class="btn btn-default" href="#/admin/companies" role="button">Back</a>	  
+    </div>
+  </div>
+  </div>
+ 
+</form>
+</div>

@@ -1,33 +1,33 @@
-<div class="container-fluid">
+<div class="border-box">
 	<h1>Roles Page</h1>
+	<a class="btn btn-default" href="#admin/roles/add" role="button">Add</a>
 	<div class="table-responsive">
-		<div class="table table-bordered">
-			<thead>
-				<tr>
+		<table class="table">
+				 
+				<thead>
 					<th>#</th>
 					<th>Code</th>
 					<th>Description</th>
 					<th>Last Updated Date</th>
 					<th>Last Updated By</th>
 					<th></th>
-				</tr>
 				</thead>
-				<div ng-repeat="role in roles" class="table table-striped table-bordered">
-					<tr>
+				 <tbody>
+				 
+				
+					<tr ng-repeat="role in roles">
 						<td>{{role.id | number}}</td>
 						<td>{{role.code}}</td>
 						<td>{{role.descr}}</td>
 						<td>{{role.lastUpdatedtm | date}}</td>
 						<td>{{role.lastUpdatedBy}}</td>
 						<td>
-							<a class="btn btn-default" href="#" role="button">Edit</a>
-							<a class="btn btn-default" href="#" role="button">Delete</a>
+							<a class="btn btn-default" href="#/admin/roles/{{role.id | number}}" role="button">Edit</a>
+							<input type="button" class="btn btn-default" ng-click="delete(role)" value="Delete"/>
 						<td>
 					</tr>
-				</div>
-			</thead>
-
-
-		</div>
+				 
+				</tbody>
+		 </table>
 	</div>
 </div>

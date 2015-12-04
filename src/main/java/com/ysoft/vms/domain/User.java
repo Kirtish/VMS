@@ -2,8 +2,6 @@ package com.ysoft.vms.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 
 @Entity
 public class User extends AbstractEntity {

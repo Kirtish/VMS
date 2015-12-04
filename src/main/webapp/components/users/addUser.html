@@ -1,0 +1,54 @@
+
+<div class="border-box">
+<br>
+ <h2>Add User</h2>
+ <div ng-controller="UserController">
+<form class="form-horizontal" name="newRoleForm" novalidate>
+  <div class="form-group"  ng-class="{ 'has-error' : newRoleForm.firstName.$invalid && !newRoleForm.firstName.$pristine }">
+    <label for="firstName" class="col-sm-2 control-label">First Name</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="code" ng-model="user.firstName" required>
+	 </div>
+  </div>
+   <div class="form-group">
+    <label for="middleName" class="col-sm-2 control-label">Middle Name</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="code" ng-model="user.middleName">
+	 </div>
+  </div>
+   <div class="form-group"  ng-class="{ 'has-error' : newRoleForm.lastName.$invalid && !newRoleForm.lastName.$pristine }">
+    <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="code" ng-model="user.lastName" required>
+	 </div>
+  </div>
+     <div class="form-group"  ng-class="{ 'has-error' : newRoleForm.loginId.$invalid && !newRoleForm.loginId.$pristine }">
+    <label for="loginId" class="col-sm-2 control-label">Login Id</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="code" ng-model="user.loginId" required>
+	 </div>
+	 </div>
+	   <div class="form-group"  ng-class="{ 'has-error' : newRoleForm.password.$invalid && !newRoleForm.password.$pristine }">
+    <label for="password" class="col-sm-2 control-label">Password</label>
+	<div class="col-sm-4">
+    <input type="password" class="form-control" name="code" ng-model="user.password" required>
+	 </div>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error' : newRoleForm.descr.$invalid && !newRoleForm.descr.$pristine }">
+    <label for="email" class="col-sm-2 control-label">Email</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="descr" ng-model="user.email" required>
+	 </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+	<input type="submit" ng-click="addUser(user)" value="Save" class="btn btn-primary" ng-disabled="newRoleForm.$invalid"/>
+	<input type="button" ng-click="reset(newRoleForm)" value="Reset" class="btn btn-default"/>    
+	 <a class="btn btn-default" href="#/admin/users" role="button">Back</a>	  
+    </div>
+  </div>
+  </div>
+ 
+</form>
+</div>

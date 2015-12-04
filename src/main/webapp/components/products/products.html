@@ -1,3 +1,40 @@
-<div>
-  <h1>Products Page</h1>
+<div class="border-box">
+	<h1>Products Page</h1>
+	<a class="btn btn-default" href="#admin/products/add" role="button">Add</a>
+	<div class="table-responsive">
+		<table class="table">
+				 
+				<thead>
+					<th>#</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th>price</th>
+					<th>In Stock</th>
+					<th>Minimum Stock Level</th>
+					<th>maximum Stock Level</th>
+					<th>Topup</th>
+					<th>Last Updated Date</th>
+					<th>Last Updated By</th>					
+				</thead>
+				 <tbody>			
+					<tr ng-repeat="vocher in vochers">
+						<td>{{vocher.id | number}}</td>
+						<td>{{vocher.name}}</td>
+						<td>{{vocher.descr}}</td>
+						<td>{{vocher.price}}</td>
+						<td>{{vocher.instock}}</td>
+						<td>{{vocher.minStock}}</td>
+						<td>{{vocher.maxStock}}</td>
+						<td>{{vocher.topup}}</td>						
+						<td>{{vocher.lastUpdatedtm | date}}</td>
+						<td>{{vocher.lastUpdatedBy}}</td>
+						<td>
+							<a class="btn btn-default" href="#/admin/products/{{vocher.id | number}}" role="button">Edit</a>
+							<input type="button" class="btn btn-default" ng-click="deleteVocher(vocher)" value="Delete"/>
+						<td>
+					</tr>
+				 
+				</tbody>
+		 </table>
+	</div>
 </div>

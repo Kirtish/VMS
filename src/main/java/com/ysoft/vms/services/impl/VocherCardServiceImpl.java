@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ysoft.vms.domain.VocherCard;
 import com.ysoft.vms.repositories.VocherCardRepository;
@@ -31,11 +33,13 @@ public class VocherCardServiceImpl implements IVocherCardService {
 		return vocherCardRepository.findOne(id);
 	}
 
+	@Transactional(propagation = Propagation.REQUIRED)
 	@Override
 	public VocherCard save(VocherCard vocherCard) {
 		return vocherCardRepository.save(vocherCard);
 	}
 
+	@Transactional(propagation = Propagation.REQUIRED)
 	@Override
 	public VocherCard delete(Long id) {
 		VocherCard vocherCard = getVocherCard(id);

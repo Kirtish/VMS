@@ -1,0 +1,33 @@
+<div class="border-box">
+	<h1>Companies Page</h1>
+	<a class="btn btn-default" href="#admin/companies/add" role="button">Add</a>
+	<div class="table-responsive">
+		<table class="table">
+				 
+				<thead>
+					<th>#</th>
+					<th>Code</th>
+					<th>Description</th>
+					<th>Last Updated Date</th>
+					<th>Last Updated By</th>
+					<th></th>
+				</thead>
+				 <tbody>
+				 
+				
+					<tr ng-repeat="company in companys">
+						<td>{{company.id | number}}</td>
+						<td>{{company.name}}</td>
+						<td>{{company.descr}}</td>
+						<td>{{company.lastUpdatedtm | date}}</td>
+						<td>{{company.lastUpdatedBy}}</td>
+						<td>
+							<a class="btn btn-default" href="#/admin/companies/{{company.id | number}}" role="button">Edit</a>
+							<input type="button" class="btn btn-default" ng-click="deleteCompany(company)" value="Delete"/>
+						<td>
+					</tr>
+				 
+				</tbody>
+		 </table>
+	</div>
+</div>

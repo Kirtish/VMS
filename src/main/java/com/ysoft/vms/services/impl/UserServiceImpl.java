@@ -1,5 +1,7 @@
 package com.ysoft.vms.services.impl;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +21,11 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public List<User> getUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		List<User> users = new ArrayList<User>();
+		Iterator<User> userItr = userRepository.findAll().iterator();
+		while(userItr.hasNext())
+			users.add(userItr.next());
+		return users;
 	}
 
 	@Override

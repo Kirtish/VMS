@@ -23,15 +23,15 @@ public class UserController {
 	
 	@Autowired
 	public UserController(IUserService userRepository){
-		this.userService = userService;
+		this.userService = userRepository;
 	}
 	
-	@RequestMapping(value="/{id}",method=RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/{id}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody User get(@PathVariable Long id){
 		return userService.getUser(id);
 	}
 	
-	@RequestMapping(value="/delete/{id}",method=RequestMethod.GET,consumes=MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/delete/{id}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)
 	public void delete(@PathVariable Long id){
 		userService.delete(id);
 	}

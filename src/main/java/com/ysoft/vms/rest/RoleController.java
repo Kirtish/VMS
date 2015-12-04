@@ -37,12 +37,12 @@ public class RoleController {
 		
 	} 
 	
-	@RequestMapping(value="/{id}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)	
+	@RequestMapping(value="/{id}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)	
 	public @ResponseBody Role fetch( @PathVariable Long id){
 		return roleService.getRole(id);
 	} 
 	
-	@RequestMapping(value="/delete/{id}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)	
+	@RequestMapping(value="/delete/{id}",method=RequestMethod.GET,produces=MediaType.APPLICATION_JSON_VALUE)	
 	public void delete(@PathVariable Long id){
 		roleService.delete(id);
 	}

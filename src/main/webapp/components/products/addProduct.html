@@ -1,0 +1,63 @@
+
+<div class="border-box">
+<br>
+ <h2>Add Product</h2>
+ <div ng-controller="ProductController">
+<form class="form-horizontal" name="newRoleForm" novalidate>
+  <div class="form-group"  ng-class="{ 'has-error' : newRoleForm.name.$invalid && !newRoleForm.name.$pristine }">
+    <label for="name" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="name" ng-model="vocher.name" required>
+	 </div>
+  </div>
+  <div class="form-group" ng-class="{ 'has-error' : newRoleForm.descr.$invalid && !newRoleForm.descr.$pristine }">
+    <label for="descr" class="col-sm-2 control-label">Description</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="descr" ng-model="vocher.descr" required>
+	 </div>
+  </div>
+    <div class="form-group" ng-class="{ 'has-error' : newRoleForm.price.$invalid && !newRoleForm.price.$pristine }">
+    <label for="price" class="col-sm-2 control-label">Unit price</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="descr" ng-model="vocher.price" required>
+	 </div>
+  </div>
+    <div class="form-group" ng-class="{ 'has-error' : newRoleForm.minStock.$invalid && !newRoleForm.minStock.$pristine }">
+    <label for="minStock" class="col-sm-2 control-label">Minimum Stock</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="descr" ng-model="vocher.minStock" required>
+	 </div>
+  </div>
+    <div class="form-group" ng-class="{ 'has-error' : newRoleForm.maxStock.$invalid && !newRoleForm.maxStock.$pristine }">
+    <label for="maxStock" class="col-sm-2 control-label">Max Stock</label>
+	<div class="col-sm-4">
+    <input type="text" class="form-control" name="descr" ng-model="vocher.maxStock" required>
+	 </div>
+	 
+	   <div class="form-group">
+    <label for="topup" class="col-sm-2 control-label">Is Topup</label>
+	<div class="col-sm-4">
+	<input type="checkbox" ng-model="vocher.topup"
+           ng-true-value="1" ng-false-value="0">
+   
+	 </div>
+  </div>
+    <div class="form-group" ng-class="{ 'has-error' : newRoleForm.company.$invalid && !newRoleForm.company.$pristine }">
+    <label for="company" class="col-sm-2 control-label">Company</label>
+	<div class="col-sm-4">
+    <select class="form-control" id="company" ng-model="vocher.company" 
+	                    ng-options="c.name for c in companys track by c.id" required>
+	</select>
+</div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+	<input type="submit" ng-click="addVocher(vocher)" value="Save" class="btn btn-primary" ng-disabled="newRoleForm.$invalid"/>
+	<input type="button" ng-click="reset(newRoleForm)" value="Reset" class="btn btn-default"/>    
+	 <a class="btn btn-default" href="#/admin/products" role="button">Back</a>	  
+    </div>
+  </div>
+  </div>
+ 
+</form>
+</div>
