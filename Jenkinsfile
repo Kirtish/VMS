@@ -1,4 +1,4 @@
-dockerNode(docker) {
+node("docker") {
   agent { label "docker"}
 checkout scm
 stage('build') {
