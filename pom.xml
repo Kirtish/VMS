@@ -19,7 +19,7 @@
 		<!-- Spring -->
 		<spring-framework.version>4.0.0.RELEASE</spring-framework.version>
 		<spring.data.jpa.version>1.4.3.RELEASE</spring.data.jpa.version>
-		<mysql.connector.version>5.1.26</mysql.connector.version>
+		<mysql.connector.version>8.0.16</mysql.connector.version>
 		<!-- Hibernate / JPA -->
 		<hibernate.version>4.2.4.Final</hibernate.version>
 		<!-- Logging -->
